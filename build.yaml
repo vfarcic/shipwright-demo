@@ -2,15 +2,15 @@ apiVersion: shipwright.io/v1alpha1
 kind: Build
 metadata:
   name: devops-toolkit
+  annotations:
+    build.build.dev/build-run-deletion: "true"
 spec:
   source:
     url: https://github.com/vfarcic/shipwright-demo
-    contextDir: source-build
   strategy:
     name: kaniko
     kind: ClusterBuildStrategy
-  dockerfile: Dockerfile
   output:
     image: docker.io/vfarcic/devops-toolkit:latest
     credentials:
-      name: push-secret
+      name: regcred
