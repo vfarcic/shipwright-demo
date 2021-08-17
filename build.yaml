@@ -1,14 +1,15 @@
 apiVersion: shipwright.io/v1alpha1
 kind: Build
 metadata:
-  name: buildpack-nodejs-build
+  name: devops-toolkit
 spec:
   source:
     url: https://github.com/vfarcic/shipwright-demo
     contextDir: source-build
   strategy:
-    name: buildpacks-v3
+    name: kaniko
     kind: ClusterBuildStrategy
+  dockerfile: Dockerfile
   output:
     image: docker.io/vfarcic/devops-toolkit:latest
     credentials:
