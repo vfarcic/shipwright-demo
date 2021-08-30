@@ -6,4 +6,4 @@ spec:
   buildRef:
     name: devops-toolkit
   output:
-    image: docker.io/vfarcic/devops-toolkit:0.0.1
+    image: docker.io/vfarcic/devops-toolkit:0.0.2
